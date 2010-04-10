@@ -1,0 +1,83 @@
+Scala is:
+
+Like Java...
+  ...no semi-colons.
+  ...with type inference.
+  ...but less annoying.
+  ...but with much less clutter.
+  ...but with higher-order functions.
+  ...but responsive to the needs of the developer community.
+  ...but not so conservative in development.
+  ...with a REPL. Oh yeah.
+  ...with Python-style named arguments (2.8).
+  ...but better generics.
+  ...no primitives. Everything is an object.
+  ...but you can use it for scripting.
+
+Like Ruby and Python...
+  ...no, really. It is Java for people too used to the syntactical
+    niceties of Ruby/Python.
+  ...but faster!
+  ...but with a really mature VM (the JVM)
+    and much deeper integration into the Java platform.
+  ...but has proper Unicode support (unlike Ruby!).
+
+Like Clojure...
+  ...with curly braces!
+  ...but you don't need to learn LISP. ;-)
+
+Of Types
+--------
+
+personal preference: strong-typing > weak-typing.
+
+PHP:
+("false" == 0)
+//=> true
+
+((string) "false" == (int) 0)
+//=> also returns true. Fuck.
+
+weak-typing leads to craziness. really. the string "false" equalling the integer zero? this kind of thing only satisfies two types of people:
+
+- people without the brain power to keep track of types. (i.e. noobs)
+- beardy C programmers who like writing totally obfuscated bullshit code that 
+  you won't understand ten minutes after it is written.
+
+thanks, but no thanks. 
+
+strong types good.
+
+static types? the only reason people hate them is because some 
+statically-typed langauges are verbose - e.g. Java.
+
+-> http://www.pphsg.org/cdsmith/types.html
+-> Google: what to know before debating type systems
+
+
+once you use a language with a decent type system, you start missing it. When 
+I use Ruby or Python, I'll see a method or function in the docs like this:
+
+foo(x, y)
+
+I have no fucking clue what this does. But:
+
+foo(x: Int, y: Int): Int
+
+gives me some clue that this is a mathematical function. Similarly, 
+
+foo(x: String, y: String): String
+
+tells me it is not a mathematical function!
+
+Similarly:
+
+(doc\\"h1")(0).getClass.getMethods.filter(
+  _.getReturnType() == Class.forName("java.lang.String")
+).foreach(println _)
+
+Apologies for the dense style.
+
+In a REPL, if you working with a complex library like XML, it is nice to be 
+able to look at the methods. Here we are filtering them to see only those 
+which have a return type of String. This is good.
